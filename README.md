@@ -1,2 +1,3 @@
 # Skript-Django
-Python Django project for script language homework.
+Script language homework.
+A simple blog like python Django app.
