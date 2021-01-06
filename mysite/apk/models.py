@@ -7,17 +7,20 @@ class Article(models.Model):
     title = models.CharField(max_length=60)
     content = models.TextField()
     #Posle cemo dodati i slike
+        #image field
+    
     #likes = models.IntegerField(default=0)  #podesicemo da se ovo inkrementira
     created_at = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    #   Forma
-    #class Meta:
+    
+    class Meta:
         #model = Article
         #fields = ['title', 'content']
         #articles = 'articles'
+        pass
 
 
     def __str__(self):
-        return f'{self.content}'
+        return f'{self.title}'

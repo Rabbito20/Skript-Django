@@ -10,18 +10,21 @@ from django.http import HttpResponse
 
 #   apk views
 
+#Svi postovi
 class HomeView(LoginRequiredMixin, ListView):
     model = Article
     template_name = 'apk/index.html'
-    context_object_name = 'apk_apk'   # mozda je i apk_apk - not sure
+    context_object_name = 'blogz'   # apk_apk - not sure
     #   Sortiramo - prvo ide najskorijeo bjavljen post
-    #ordering = ['-created_at']
+    ordering = ['-created_at']
     paginate_by = 3
 
+#Single post
 class EntryView(LoginRequiredMixin, DetailView):
     model = Article
     template_name = 'apk/article_detail.html'
 
+#Kreiranje posta
 class CreateBlogView(LoginRequiredMixin, CreateView):
     model = Article
     template_name = 'apk/create_blog_view.html'

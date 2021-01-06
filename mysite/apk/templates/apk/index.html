@@ -5,26 +5,30 @@
   <!-- Blog Entries Column -->
       <div class="col-md-8">
 
-        {% for apk in apk_apk %}
-        <!--{% for apk in mysite_apk %} Ovo ne treba-->
+        {% for apk in blogz %}
+        <!--{% for apk in apk_apk %} Ovo ne treba-->
         <!-- Blog Post -->
-        <div class="card mb-4 mt-4">
-          <div class="card-body">
-            <h2 class="card-title">{{ article.title }}</h2>
-            <!-- Dodaj trunctatechars:100 posle -->
-            <p class="card-text">{{ article.content }}</p>
-            <a href="{% url 'article-detail' article.pk %}" class="btn btn-primary btn-sm">Read More &rarr;</a>
+          <div class="card mb-4 mt-4">
+            <div class="card-body">
+              <h2 class="card-title">{{ article.title }}</h2>
+              <!-- Dodaj trunctatechars:100 posle -->
+              <p class="card-text">{{ article.content }}</p>
+              <a href="{% url 'article-detail' article.pk %}" class="btn btn-primary btn-sm">Read More &rarr;</a>
+            </div>
+            <div class="card-footer text-muted">
+              Post created on {{ article.created_at }} by
+              <span class= "text-info mr-2">{{ article.author }}</span>
+            </div>
           </div>
-          <div class="card-footer text-muted">
-            Posted on {{ article.created_at }} by
-            <span class= "text-info mr-2">{{ article.author }}</span>
-          </div>
-        </div>
-        {% endfor %}
+          {% endfor %}
+        <!--
+          Iz nekog razloga mu treba i ovaj drugi for zatvoren, a mozda i ne ?_?
+          {% endfor %}
+        -->
+        
 
-
-        {% if is_paginated %}
         <!-- Pagination -->
+        {% if is_paginated %}
         <ul class="pagination justify-content-center mb-4">
           {% if page_obj.has_previous %}
           <li class="page-item">
