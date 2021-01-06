@@ -1,0 +1,24 @@
+{% extends 'apk/base.html' %}
+
+{% block content %} 
+
+<!-- Blog Entries Column -->
+      <div class="col-md-8">
+
+        <a href="{% url 'apk-home' %}">Homepage</a>
+        <!-- Blog Post -->
+        <div class="card mb-4 mt-4">
+          <div class="card-body">
+            <h2 class="card-title">{{ object.title }}</h2>
+            <p class="card-text">{{ object.content }}</p>
+          </div>
+          <div class="card-footer text-muted">
+            Posted on {{ object.created_at }} by
+            <span class= "text-info mr-2">{{ object.author }}</span>
+          </div>
+        </div>
+        
+
+      </div>
+
+{% endblock %}
