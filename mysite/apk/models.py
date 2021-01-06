@@ -7,8 +7,7 @@ class Article(models.Model):
     title = models.CharField(max_length=60)
     content = models.TextField()
     #Posle cemo dodati i slike
-        #image field
-    
+    img = models.ImageField(null=True, blank=True)
     #likes = models.IntegerField(default=0)  #podesicemo da se ovo inkrementira
     created_at = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)

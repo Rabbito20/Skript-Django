@@ -16,7 +16,7 @@ class HomeView(LoginRequiredMixin, ListView):
     template_name = 'apk/index.html'
     context_object_name = 'blogz'   # apk_apk - not sure
     #   Sortiramo - prvo ide najskorijeo bjavljen post
-    ordering = ['-created_at']
+    #ordering = ['-created_at']
     paginate_by = 3
 
 #Single post
